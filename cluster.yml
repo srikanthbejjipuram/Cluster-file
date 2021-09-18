@@ -1,0 +1,16 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster-new
+  region: us-east-2
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t3a.small
+    desiredCapacity: 2
+    volumeSize: 30
+    ssh:
+      allow: true
+      publicKeyPath: ~/.ssh/id_rsa.pub
+
